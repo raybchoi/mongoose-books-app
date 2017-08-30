@@ -59,8 +59,8 @@ db.Book.remove({}, function(err, books){
   if(err) {
     console.log('Error occurred in remove', err);
   } else {
-    console.log('removed all books');
-
+    console.log('removed all books, ', db.Book.length);
+// AFTER you remove all books then go run this next line
     // create new records based on the array books_list
     db.Book.create(books_list, function(err, books){
       if (err) { return console.log('err', err); }
